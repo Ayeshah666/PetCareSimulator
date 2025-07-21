@@ -2,6 +2,7 @@
 
 Welcome to **Fluffy Friends Care**, your very own virtual pet game where you can adopt and care for a fluffy companion! Whether it's a 🐶 dog or a 🐱 cat, your pet needs your love and attention every day!
 
+live Demo: https://ayeshah666.github.io/PetCareSimulator/
 ---
 
 ## ✨ Features
