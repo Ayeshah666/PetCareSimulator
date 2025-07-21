@@ -1,0 +1,39 @@
+@keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .bounce-animation {
+            animation: bounce 1s infinite;
+        }
+        .pet-hunger {
+            transition: width 0.5s ease;
+        }
+        .pet-happiness {
+            transition: width 0.5s ease;
+        }
+        .pet-energy {
+            transition: width 0.5s ease;
+        }
+        .pet-hygiene {
+            transition: width 0.5s ease;
+        }
+        .pet-container {
+            transition: transform 0.3s ease;
+        }
+        .pet-container:hover {
+            transform: scale(1.05);
+        }
+        .action-button {
+            transition: all 0.3s ease;
+        }
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+        

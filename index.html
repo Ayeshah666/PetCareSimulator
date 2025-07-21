@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Friends Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-purple-100 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <header class="flex flex-col items-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">Fluffy Friends Care</h1>
+                <p class="text-lg text-purple-500">Take care of your virtual pet!</p>
+                <div class="mt-4 flex space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-pink-400"></div>
+                    <div class="w-8 h-8 rounded-full bg-purple-400"></div>
+                    <div class="w-8 h-8 rounded-full bg-blue-400"></div>
+                    <div class="w-8 h-8 rounded-full bg-yellow-400"></div>
+                </div>
+            </header>
+
+            <!-- Game Area -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Pet Display -->
+                <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-semibold text-purple-600">Your Pet</h2>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-medium text-gray-500">Day: </span>
+                            <span id="day-counter" class="text-lg font-bold text-purple-600">1</span>
+                        </div>
+                    </div>
+
+                    <div id="pet-container" class="pet-container flex flex-col items-center justify-center p-6 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl border-2 border-purple-200">
+                        <div id="pet" class="relative mb-6">
+                            <div id="pet-face" class="w-60 h-60 relative">
+    <img id="pet-image" src="cute dog.png" alt="Pet" class="w-full h-full object-contain">
+</div>
+</div>
+                    <h3 id="pet-name" class="text-2xl font-bold text-purple-700 mb-2">Fluffy</h3>
+                    <p id="pet-status" class="text-purple-500 mb-4">Happy and energetic!</p>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="bg-pink-50 rounded-xl p-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-pink-600"><i class="fas fa-utensils mr-2"></i>Hunger</span>
+                            <span id="hunger-value" class="font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-pink-200 rounded-full h-3">
+                            <div id="hunger-bar" class="pet-hunger bg-pink-500 h-3 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-purple-600"><i class="fas fa-heart mr-2"></i>Happiness</span>
+                            <span id="happiness-value" class="font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-purple-200 rounded-full h-3">
+                            <div id="happiness-bar" class="pet-happiness bg-purple-500 h-3 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-blue-600"><i class="fas fa-bolt mr-2"></i>Energy</span>
+                            <span id="energy-value" class="font-bold">75%</span>
+                        </div>
+                        <div class="w-full bg-blue-200 rounded-full h-3">
+                            <div id="energy-bar" class="pet-energy bg-blue-500 h-3 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 rounded-xl p-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-yellow-600"><i class="fas fa-bath mr-2"></i>Hygiene</span>
+                            <span id="hygiene-value" class="font-bold">85%</span>
+                        </div>
+                        <div class="w-full bg-yellow-200 rounded-full h-3">
+                            <div id="hygiene-bar" class="pet-hygiene bg-yellow-500 h-3 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="bg-white rounded-3xl p-6 shadow-lg">
+                <h2 class="text-2xl font-semibold text-purple-600 mb-6">Actions</h2>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <button id="feed-btn" class="action-button flex flex-col items-center justify-center p-4 bg-pink-100 rounded-xl border-2 border-pink-200 hover:bg-pink-200 transition-colors">
+                        <i class="fas fa-utensils text-3xl text-pink-600 mb-2"></i>
+                        <span class="font-medium text-pink-700">Feed</span>
+                    </button>
+                    <button id="play-btn" class="action-button flex flex-col items-center justify-center p-4 bg-purple-100 rounded-xl border-2 border-purple-200 hover:bg-purple-200 transition-colors">
+                        <i class="fas fa-gamepad text-3xl text-purple-600 mb-2"></i>
+                        <span class="font-medium text-purple-700">Play</span>
+                    </button>
+                    <button id="sleep-btn" class="action-button flex flex-col items-center justify-center p-4 bg-blue-100 rounded-xl border-2 border-blue-200 hover:bg-blue-200 transition-colors">
+                        <i class="fas fa-moon text-3xl text-blue-600 mb-2"></i>
+                        <span class="font-medium text-blue-700">Sleep</span>
+                    </button>
+                    <button id="clean-btn" class="action-button flex flex-col items-center justify-center p-4 bg-yellow-100 rounded-xl border-2 border-yellow-200 hover:bg-yellow-200 transition-colors">
+                        <i class="fas fa-bath text-3xl text-yellow-600 mb-2"></i>
+                        <span class="font-medium text-yellow-700">Clean</span>
+                    </button>
+                    <button id="pet-btn" class="action-button flex flex-col items-center justify-center p-4 bg-green-100 rounded-xl border-2 border-green-200 hover:bg-green-200 transition-colors col-span-2">
+                        <i class="fas fa-hand-holding-heart text-3xl text-green-600 mb-2"></i>
+                        <span class="font-medium text-green-700">Pet & Cuddle</span>
+                    </button>
+                </div>
+
+                <!-- Pet Selection -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-purple-600 mb-3">Choose Your Pet</h3>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button data-pet="dog" class="pet-select p-2 bg-gray-100 rounded-lg border-2 border-gray-200 hover:bg-gray-200">
+                            <i class="fas fa-dog text-2xl text-amber-600"></i>
+                        </button>
+                        <button data-pet="cat" class="pet-select p-2 bg-gray-100 rounded-lg border-2 border-gray-200 hover:bg-gray-200">
+                            <i class="fas fa-cat text-2xl text-gray-600"></i>
+                        </button>
+                        <button data-pet="bunny" class="pet-select p-2 bg-gray-100 rounded-lg border-2 border-gray-200 hover:bg-gray-200">
+                            <i class="fas fa-paw text-2xl text-pink-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Name Input -->
+                <div class="mt-6">
+                    <label for="pet-name-input" class="block text-sm font-medium text-purple-600 mb-1">Pet Name</label>
+                    <div class="flex">
+                        <input type="text" id="pet-name-input" class="flex-1 rounded-l-lg border-2 border-purple-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-300" value="Fluffy">
+                        <button id="name-change-btn" class="bg-purple-500 text-white px-4 py-2 rounded-r-lg hover:bg-purple-600 transition-colors">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div id="message-container" class="fixed bottom-4 right-4 w-64 bg-white rounded-xl shadow-lg p-4 border-2 border-purple-200 hidden">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="font-bold text-purple-600">Pet Says:</h3>
+                <button id="close-message" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p id="message-text" class="text-sm text-gray-700"></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
